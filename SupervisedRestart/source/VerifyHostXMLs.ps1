@@ -5,12 +5,12 @@ function VerifyXMLPreandPostXMLs
     [string] $folder,
     [Parameter(Mandatory)]
     [string] $folderPath)
-    #Write-Host "Attempting to verify $folder on path $folderPath"
+    Write-Verbose "Attempting to verify $folder on path $folderPath"
     if((Test-Path -Path "$folderPath\$folder\PreChecks.xml" -PathType Leaf) -and (Test-Path -Path "$folderPath\$folder\PostChecks.xml" -PathType Leaf)){
-        #Write-Host "Path Found $folderPath\$folder"
+        Write-Verbose "Path Found $folderPath\$folder"
         return $true
     }else{
-        #Write-Host "NO Path Found $folderPath\$folder"
+        Write-Verbose "NO Path Found $folderPath\$folder"
         return $false
     }
 }
@@ -20,8 +20,9 @@ function GetXMLHostFiles
     Param(
     [Parameter(Mandatory)]
     [string] $folderPath)
-    $folders = Get-ChildItem $folderPath
 
+    $folders = Get-ChildItem $folderPath
+    Write-Verbose "Found folders: $folders"
     $serverList = @()
     foreach($folder in $folders.Name){
         #$result = VerifyXMLPreandPostXMLs $folder

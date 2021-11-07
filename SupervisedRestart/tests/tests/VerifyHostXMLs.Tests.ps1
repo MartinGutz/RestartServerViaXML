@@ -15,13 +15,13 @@ Describe "Check on the XML files" {
     }
 
     It 'Verify Function returns Server names' {
-        $serverNames = GetXMLHostFiles $testPath
+        $serverNames = GetXMLHostFiles $testPath -Verbose
         Write-Host "ServerName: $serverNames"
         $serverNames | Should -Contain 'SERVERNAME'
     }
 
     It 'Verify Function does not find ServerName 2' {
-        $serverNames = GetXMLHostFiles $testPath
+        $serverNames = GetXMLHostFiles $testPath -Verbose
         Write-Host "ServerName: $serverNames"
         $serverNames | Should -Not -Contain 'SERVERNAME2'
     }
