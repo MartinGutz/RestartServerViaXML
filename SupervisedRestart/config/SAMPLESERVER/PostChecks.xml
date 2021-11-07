@@ -1,0 +1,16 @@
+<Postchecks>
+	<Postcheck>
+		<Name>BITS</Name>
+		<CheckType>StartService</CheckType>
+	</Postcheck>
+	<Postcheck>
+		<Name>WINRM</Name>
+		<CheckType>StartService</CheckType>
+	</Postcheck>
+	<Postcheck>
+		<Name>Check System Log</Name>
+		<LogLine>Service located</LogLine>
+		<LogLocation>Service located</LogLocation>
+		<CheckType>CheckLog</CheckType>
+	</Postcheck>
+</Postchecks>
