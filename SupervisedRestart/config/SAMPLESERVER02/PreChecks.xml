@@ -1,0 +1,14 @@
+<Prechecks>
+	<Precheck>
+		<Name>BITS</Name>
+		<CheckType>StopService</CheckType>
+	</Precheck>
+	<Precheck>
+		<Name>WINRM</Name>
+		<CheckType>StopService</CheckType>
+	</Precheck>
+	<Precheck>
+		<Name>NotifyUser</Name>
+		<CheckType>SendEmail</CheckType>
+	</Precheck>
+</Prechecks>
